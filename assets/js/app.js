@@ -34,7 +34,7 @@ document.getElementById("dataForm").addEventListener("submit", async (e) => {
         });
 
         if (response.ok) {
-            alert('เพิ่มข้อมูลเรียบร้อยแล้ว');
+            alert('ลงทะเบียนเรียบร้อยแล้ว');
             document.getElementById("dataForm").reset();
             loadTable();
         }
