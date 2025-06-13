@@ -33,7 +33,11 @@ document.getElementById("dataForm").addEventListener("submit", async (e) => {
             }),
         });
 
-        if (response.ok) loadTable();
+        if (response.ok) {
+            alert('เพิ่มข้อมูลเรียบร้อยแล้ว');
+            document.getElementById("dataForm").reset();
+            loadTable();
+        }
     };
     reader.readAsDataURL(fileInput);
 });
@@ -41,7 +45,7 @@ document.getElementById("dataForm").addEventListener("submit", async (e) => {
 async function loadTable() {
     const response = await fetch(SHEET_API_URL, {
         method: "POST",
-        body: JSON.stringify({ action: "list" }),
+        body: JSON.stringify({action: "list"}),
     });
 
     const data = await response.json();
@@ -67,7 +71,7 @@ async function deleteRow(index) {
     if (!confirm("ยืนยันการลบ?")) return;
     await fetch(SHEET_API_URL, {
         method: "POST",
-        body: JSON.stringify({ action: "delete", rowIndex: index }),
+        body: JSON.stringify({action: "delete", rowIndex: index}),
     });
     loadTable();
 }
