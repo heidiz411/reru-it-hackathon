@@ -161,39 +161,77 @@
                     </div>
                 </div>
                 <div class="card-body p-5 pt-0">
-                    <h4 class="mt-5 mb-3">รายละเอียดการแข่งขัน</h4>
-                    <ol>
-                        <li>สมัครเป็นทีม ทีมละ 3 คน (ตั้งชื่อทีม)</li>
-                        <li>ผู้สมัครสามารถตั้งชื่อทีมได้</li>
-                        <li>ผู้สมัครสามารถตั้งชื่อผู้ใช้และรหัสผ่านได้เอง</li>
-                        <li>หัวข้อในการจัดการแข่งขัน
-                            <ul>
-                                <li>หัวข้อ Web Application Hacking</li>
-                                <li>หัวข้อ System Hacking</li>
-                                <li>หัวข้อ Cryptography</li>
-                                <li>หัวข้อ Investigation</li>
-                                <li>หัวข้อ Cyber Threat Intelligence (CTI)</li>
-                            </ul>
-                        </li>
-                    </ol>
-                    <h4 class="mt-5 mb-3">ผู้สมัครสามารถเลือกระดับการแข่งขันได้ ดังนี้</h4>
-                    <ul>
-                        <li>Junior Level เป็นนักเรียนระดับมัธยมศึกษาตอนปลาย หรือเทียบเท่า สังกัดโรงเรียนหรือสถาบันในประเทศไทย (อายุ 16 – 18 ปี)</li>
-                        <li>Senior Level เป็นนักศึกษาในระดับอุดมศึกษา หรือเทียบเท่า สังกัดมหาวิทยาลัยหรือสถาบันในประเทศไทย อายุไม่เกิน 22 ปีบริบูรณ์ ณ วันที่ลงทะเบียนสมัคร (อายุ 19 –
-                            22 ปี)
-                        </li>
-                        <li>Open Level เป็นหน่วยงาน CII หน่วยงานภาครัฐ ภาคเอกชน และประชาชน ทั่วไปสัญชาติไทย (ไม่จำกัดอายุ)</li>
-                    </ul>
-                    <h4 class="mt-5 mb-3">ค่าสมัครเข้าร่วมการแข่งขัน ตามประเภท</h4>
-                    <ul>
-                        <li>Junior Level ทีมละ 1,000 บาท</li>
-                        <li>Senior Level ทีมละ 1,500 บาท</li>
-                        <li>Open Level ทีมละ 2,000 บาท</li>
-                        <br>
-                        <li>หมายเหตุ: <br>เลขบัญชีในการ โอนค่าสมัคร<br>ธ.กรุงไทย สาขาร้อยเอ็ด
-                            <br>เลขที่บัญชี 411-3-66531-1
-                        </li>
-                    </ul>
+                    <h5 class="mb-4 mt-5">สมัครเข้าร่วมการแข่งขัน</h5>
+
+                    <form id="dataForm">
+                        <div class="row g-2">
+                            <div class="col-md-4">
+                                <select class="form-select form-select-lg mb-3" id="team_type" aria-label="form-select-lg example" required>
+                                    <option value="">-เลือกรุ่น-</option>
+                                    <option value="Junior Level">Junior Level [16-18 ปี]</option>
+                                    <option value="Senior Level">Senior Level [19-21 ปี]</option>
+                                    <option value="Open Level">Open Level [ไม่จำกัดอายุ]</option>
+                                </select>
+                            </div>
+                            <div class="col-md-8">
+                                <input type="text" id="team_name" class="form-control form-control-lg" required placeholder="ชื่อทีม">
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <input type="text" id="edu_name" class="form-control form-control-lg mb-3" required placeholder="สถาบันการศึกษา">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" id="instructor_name" class="form-control form-control-lg mb-3" required placeholder="ชื่อที่ปรึกษาทีม (วงเล็บขนาดไซส์เสื้อ)">
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-md-6">
+                                <input type="text" id="phone" class="form-control form-control-lg mb-3" required placeholder="เบอร์โทรผู้ควบคุมทีม">
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" id="email" class="form-control form-control-lg mb-3" placeholder="อีเมล์ ">
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-md-12">
+                                <textarea type="text" id="member" class="form-control form-control-lg mb-3" rows="5" required
+                                          placeholder="ชื่อสมาชิกในทีม 3 ท่าน (พร้อม วงเล็บ ระบุ ไซต์เสื้อ)"></textarea>
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-md-12">
+                                <input type="file" id="fileInput" class="form-control form-control-lg mb-3" required placeholder="สลิปการโอนเงินค่าสมัคร">
+                            </div>
+                        </div>
+                        <div class="row g-2">
+                            <div class="col-md-12">
+                                <button type="submit" class="btn btn-primary me-3">สมัคร</button>
+                                <button type="reset" class="btn btn-secondary">ยกเลิก</button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <div class="row d-none">
+                        <div class="col-12">
+                            <input type="text" id="searchInput" class="form-control mt-4" placeholder="ค้นหา...">
+
+                            <table class="table mt-3">
+                                <thead>
+                                <tr>
+                                    <th>Title</th>
+                                    <th>Date</th>
+                                    <th>Amount</th>
+                                    <th>File</th>
+                                    <th>Actions</th>
+                                </tr>
+                                </thead>
+                                <tbody id="dataTable">
+                                <!-- Data will be injected here -->
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -274,6 +312,8 @@
         </div>
     </div>
 </footer>
+
+<script src="assets/js/app.js"></script>
 <!--   Core JS Files   -->
 <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
 <script src="assets/js/core/bootstrap.min.js" type="text/javascript"></script>
