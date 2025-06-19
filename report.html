@@ -139,60 +139,58 @@
     </div>
 </nav>
 <!-- End Navbar -->
-<section class="pt-3 pt-md-5 pb-md-5 pt-lg-5 bg-gray-200">
+<section class="pt-3 pt-md-5 pb-md-5 pt-lg-5 bg-gray-200 pb-3">
     <div class="container">
-        <div class="col-lg-12 col-md-12 mx-auto pb-3">
-            <div class="card shadow-lg">
-                <div class="card-header bg-gradient-primary p-5 position-relative">
-                    <h3 class="text-white mb-0">การแข่งขัน IT RERU Cyber Hackathon 2025</h3>
-                    <p class="text-white opacity-8 mb-4">วันที่ 7-8 กรกฎาคม 2568 ณ อาคารอเนกประสงค์ มหาวิทยาลัยราชภัฏร้อยเอ็ด</p>
-                    <div class="position-absolute w-100 z-index-1 bottom-0 ms-n5">
-                        <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto"
-                             style="height:7vh;min-height:50px;">
-                            <defs>
-                                <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
-                            </defs>
-                            <g class="moving-waves">
-                                <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40"></use>
-                                <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)"></use>
-                                <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)"></use>
-                                <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)"></use>
-                                <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)"></use>
-                                <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95"></use>
-                            </g>
-                        </svg>
-                    </div>
+        <div class="card shadow-lg">
+            <div class="card-header bg-gradient-primary p-5 position-relative">
+                <h3 class="text-white mb-0">การแข่งขัน IT RERU Cyber Hackathon 2025</h3>
+                <p class="text-white opacity-8 mb-4">วันที่ 7-8 กรกฎาคม 2568 ณ อาคารอเนกประสงค์ มหาวิทยาลัยราชภัฏร้อยเอ็ด</p>
+                <div class="position-absolute w-100 z-index-1 bottom-0 ms-n5">
+                    <svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 40" preserveAspectRatio="none" shape-rendering="auto"
+                         style="height:7vh;min-height:50px;">
+                        <defs>
+                            <path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+                        </defs>
+                        <g class="moving-waves">
+                            <use xlink:href="#gentle-wave" x="48" y="-1" fill="rgba(255,255,255,0.40"></use>
+                            <use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.35)"></use>
+                            <use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.25)"></use>
+                            <use xlink:href="#gentle-wave" x="48" y="8" fill="rgba(255,255,255,0.20)"></use>
+                            <use xlink:href="#gentle-wave" x="48" y="13" fill="rgba(255,255,255,0.15)"></use>
+                            <use xlink:href="#gentle-wave" x="48" y="16" fill="rgba(255,255,255,0.95"></use>
+                        </g>
+                    </svg>
                 </div>
-                <div class="card-body p-5 pt-0">
-                    <h5 class="mb-4 mt-5">รายการทีมเข้าร่วมการแข่งขัน</h5>
+            </div>
+            <div class="card-body pt-0">
+                <h5 class="mb-4 mt-5">รายการทีมเข้าร่วมการแข่งขัน</h5>
 
-                    <input type="text" id="searchInput" class="form-control mt-4" placeholder="ค้นหา...">
+                <input type="text" id="searchInput" class="form-control mt-4" placeholder="ค้นหา...">
 
-                    <div class="table-responsive">
-                        <table class="table mt-3">
-                            <thead>
-                            <tr>
-                                <th class="text-center">#</th>
-                                <th>รุ่น</th>
-                                <th>ชื่อทีม</th>
-                                <th>สมาชิก</th>
-                                <th>ที่ปรึกษา</th>
-                                <th>อีเมล์</th>
-                                <th>หลักฐาน</th>
-                                <th>จัดการ</th>
-                            </tr>
-                            </thead>
-                            <tbody id="dataTable">
-                            <!-- Data will be injected here -->
-                            </tbody>
-                        </table>
-                    </div>
+                <div class="table-responsive">
+                    <table class="table mt-3">
+                        <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>รุ่น</th>
+                            <th>ชื่อทีม</th>
+                            <th>สมาชิก</th>
+                            <th>ที่ปรึกษา</th>
+                            <th>อีเมล์</th>
+                            <th>หลักฐาน</th>
+                            <th>จัดการ</th>
+                        </tr>
+                        </thead>
+                        <tbody id="dataTable">
+                        <!-- Data will be injected here -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
 </section>
-<footer class="footer pt-5 mt-5">
+<footer class="footer mt-5">
     <div class="container">
         <div class="row text-center">
             <div class="col-lg-3 col-md-4 col-6 mb-4">
