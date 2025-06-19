@@ -7,7 +7,7 @@ async function loadTable() {
     });
 
     const data = await response.json();
-    console.log("DATA FROM API:", data);
+    // console.log("DATA FROM API:", data);
     const table = document.getElementById("dataTable");
     table.innerHTML = "";
     data.forEach((row, index) => {
@@ -16,10 +16,10 @@ async function loadTable() {
       <tr>
         <td class="text-center">${index + 1}</td>
         <td>${row[1]}</td>
-        <td class="text-center">${row[2]}<br><span class="text-xs">${row[3]}</span></td>
+        <td>${row[2]}<br><span class="text-xs">${row[3]}</span></td>
         <td><button class="btn btn-info btn-sm" onclick="showMembers(\`${row[4]}\`)">ดูรายชื่อ</button></td>
         <td>${row[5]}<br><span class="text-xs">${row[6]}</span></td>
-        <td>${row[7]}</td>
+        <td><a href="mailto:${row[7]}" target="_blank">${row[7]}</a></td>
         <td class="text-center"><a class="btn btn-sm btn-primary" href="${row[8]}" target="_blank">ดูไฟล์</a></td>
         <td><button class="btn btn-danger btn-sm" onclick="deleteRow(${index})">ลบ</button></td>
       </tr>`;
