@@ -141,7 +141,7 @@
 <!-- End Navbar -->
 <section class="pt-3 pt-md-5 pb-md-5 pt-lg-5 bg-gray-200">
     <div class="container">
-        <div class="col-lg-8 col-md-10 mx-auto pb-3">
+        <div class="col-lg-12 col-md-12 mx-auto pb-3">
             <div class="card shadow-lg">
                 <div class="card-header bg-gradient-primary p-5 position-relative">
                     <h3 class="text-white mb-0">การแข่งขัน IT RERU Cyber Hackathon 2025</h3>
@@ -164,62 +164,27 @@
                     </div>
                 </div>
                 <div class="card-body p-5 pt-0">
-                    <h5 class="mb-4 mt-5">สมัครเข้าร่วมการแข่งขัน</h5>
+                    <h5 class="mb-4 mt-5">รายการทีมเข้าร่วมการแข่งขัน</h5>
 
-                    <form id="dataForm">
-                        <div class="row g-2">
-                            <div class="col-md-4">
-                                <select class="form-select form-select-lg mb-3" id="team_type" aria-label="form-select-lg example" required>
-                                    <option value="">-เลือกรุ่น-</option>
-                                    <option value="Junior Level">Junior Level [16-18 ปี]</option>
-                                    <option value="Senior Level">Senior Level [19-21 ปี]</option>
-                                    <option value="Open Level">Open Level [ไม่จำกัดอายุ]</option>
-                                </select>
-                            </div>
-                            <div class="col-md-8">
-                                <input type="text" id="team_name" class="form-control form-control-lg" required placeholder="ชื่อทีม">
-                            </div>
-                        </div>
-                        <div class="row g-2">
-                            <div class="col-md-6">
-                                <input type="text" id="edu_name" class="form-control form-control-lg mb-3" required placeholder="สถาบันการศึกษา">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" id="instructor_name" class="form-control form-control-lg mb-3" required placeholder="ชื่อที่ปรึกษาทีม (วงเล็บขนาดไซส์เสื้อ)">
-                            </div>
-                        </div>
-                        <div class="row g-2">
-                            <div class="col-md-6">
-                                <input type="text" id="phone" class="form-control form-control-lg mb-3" required placeholder="เบอร์โทรผู้ควบคุมทีม">
-                            </div>
-                            <div class="col-md-6">
-                                <input type="text" id="email" class="form-control form-control-lg mb-3" placeholder="อีเมล์ ">
-                            </div>
-                        </div>
-                        <div class="row g-2">
-                            <div class="col-md-12">
-                                <textarea type="text" id="member" class="form-control form-control-lg mb-3" rows="5" required
-                                          placeholder="ชื่อสมาชิกในทีม 3 ท่าน (พร้อม วงเล็บ ระบุ ไซต์เสื้อ)"></textarea>
-                            </div>
-                        </div>
-                        <div class="row g-2">
-                            <p>เลขบัญชีในการโอนค่าสมัคร<br>ธ.กรุงไทย สาขาร้อยเอ็ด
-                                <br>เลขที่บัญชี 411-3-66531-1
-                            </p>
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label for="fileInput" class="form-label">สลิปการโอนเงินค่าสมัคร</label>
-                                    <input type="file" id="fileInput" class="form-control form-control-lg mb-3" required placeholder="สลิปการโอนเงินค่าสมัคร">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row g-2">
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary me-3">สมัคร</button>
-                                <button type="reset" class="btn btn-secondary">ยกเลิก</button>
-                            </div>
-                        </div>
-                    </form>
+                    <input type="text" id="searchInput" class="form-control mt-4" placeholder="ค้นหา...">
+
+                    <table class="table mt-3">
+                        <thead>
+                        <tr>
+                            <th class="text-center">#</th>
+                            <th>รุ่น</th>
+                            <th>ชื่อทีม</th>
+                            <th>สมาชิก</th>
+                            <th>ที่ปรึกษา</th>
+                            <th>อีเมล์</th>
+                            <th>หลักฐาน</th>
+                            <th>จัดการ</th>
+                        </tr>
+                        </thead>
+                        <tbody id="dataTable">
+                        <!-- Data will be injected here -->
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -290,7 +255,22 @@
     </div>
 </footer>
 
-<script src="assets/js/app.js"></script>
+<!-- Modal -->
+<div class="modal fade" id="memberModal" tabindex="-1" aria-labelledby="memberModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="memberModalLabel">รายชื่อสมาชิก</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="ปิด"></button>
+            </div>
+            <div class="modal-body" id="memberModalBody">
+                <!-- รายชื่อจะแสดงที่นี่ -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="assets/js/loadTable.js"></script>
 <!--   Core JS Files   -->
 <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
 <script src="assets/js/core/bootstrap.min.js" type="text/javascript"></script>

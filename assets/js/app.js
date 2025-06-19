@@ -36,53 +36,7 @@ document.getElementById("dataForm").addEventListener("submit", async (e) => {
         if (response.ok) {
             alert('ลงทะเบียนเรียบร้อยแล้ว');
             document.getElementById("dataForm").reset();
-            loadTable();
         }
     };
     reader.readAsDataURL(fileInput);
 });
-
-async function loadTable() {
-    const response = await fetch(SHEET_API_URL, {
-        method: "POST",
-        body: JSON.stringify({action: "list"}),
-    });
-
-    const data = await response.json();
-    const table = document.getElementById("dataTable");
-    table.innerHTML = "";
-    data.forEach((row, index) => {
-        table.innerHTML += `
-      <tr>
-        <td>${row[1]}</td>
-        <td>${row[2]}</td>
-        <td>${row[3]}</td>
-        <td>${row[4]}</td>
-        <td>${row[5]}</td>
-        <td>${row[6]}</td>
-        <td>${row[7]}</td>
-        <td><a href="${row[8]}" target="_blank">ดูไฟล์</a></td>
-        <td><button class="btn btn-danger btn-sm" onclick="deleteRow(${index})">ลบ</button></td>
-      </tr>`;
-    });
-}
-
-async function deleteRow(index) {
-    if (!confirm("ยืนยันการลบ?")) return;
-    await fetch(SHEET_API_URL, {
-        method: "POST",
-        body: JSON.stringify({action: "delete", rowIndex: index}),
-    });
-    loadTable();
-}
-
-document.getElementById("searchInput").addEventListener("keyup", function () {
-    const val = this.value.toLowerCase();
-    const rows = document.querySelectorAll("#dataTable tr");
-    rows.forEach(row => {
-        const match = row.innerText.toLowerCase().includes(val);
-        row.style.display = match ? "" : "none";
-    });
-});
-
-window.onload = loadTable;
